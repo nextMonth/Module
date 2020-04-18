@@ -28,10 +28,7 @@ public class DeptServiceImpl implements IDeptService {
 	@Autowired
 	private IDeptDao deptDao;
 
-	private ResultInfo info = new ResultInfo(false, "");
-
-	private Map<String, Object> mapParam = new HashMap<String, Object>();  
-	 
+	private ResultInfo info = new ResultInfo(false, "");  
 	
 	@Override
 	public List<Dept> queryByLevel(String levelStr) {
@@ -160,8 +157,9 @@ public class DeptServiceImpl implements IDeptService {
 	@Override
 	public ResultInfo delete(Dept dept) { 
 		Dept queryDept = get(dept);
-		mapParam.clear();   
+		Map<String,Object> mapParam = new HashMap<String, Object>();
 		String sql="FROM Dept d WHERE d.abvbranch= :deptId"; 
+		mapParam.put("deptId", queryDept.getDeptId());
 		List<Dept> deptList=deptDao.find(sql,mapParam); 
 		if (queryDept != null  &&deptList.isEmpty()) {
 			deptDao.delCascade(queryDept);
@@ -186,7 +184,7 @@ public class DeptServiceImpl implements IDeptService {
 
 	@Override
 	public List<Dept> query(Dept dept) {
-		mapParam.clear();
+		Map<String,Object> mapParam = new HashMap<String, Object>();
 		String hql = "FROM Dept d WHERE 1=1";
 		if (!"".equals(dept.getDeptId())) {
 			hql = hql + " AND d.deptId like :deptId";
@@ -202,7 +200,7 @@ public class DeptServiceImpl implements IDeptService {
 
 	@Override
 	public Dept getBySonId(String deptId) {
-		mapParam.clear();
+		Map<String,Object> mapParam = new HashMap<String, Object>();
 		String hql = "FROM Dept d WHERE d.deptId= :deptId";
 		mapParam.put("deptId", deptId);
 		Dept dept = deptDao.get(hql, mapParam);
