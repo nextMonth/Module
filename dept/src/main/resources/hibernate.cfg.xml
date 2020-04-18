@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+	    <!-- 数据库方言 -->
+		<!-- <property name="dialect">
+ 			org.hibernate.dialect.Oracle10gDialect
+      	</property> -->
+      <!--   <property name="dialect">
+ 			org.hibernate.dialect.MySQL5InnoDBDialect
+      	</property> -->
+		<!-- 其他配置 -->
+		<property name="show_sql">true</property>
+		<property name="hbm2ddl.auto">none</property>
+		  
+		 
+		<!-- 导入映射文件,使用的的是hibernate的配置文件
+	    <mapping resource="com/insure/bean/hbm/OperUser.hbm.xml" /> 
+	    <mapping resource="com/insure/bean/hbm/Menu.hbm.xml" /> 
+	    <mapping resource="com/insure/bean/hbm/Dept.hbm.xml" /> 
+		<mapping resource="com/insure/bean/hbm/Agency.hbm.xml" /> 
+		<mapping resource="com/insure/bean/hbm/PosUserDocMan.hbm.xml" /> 
+		<mapping resource="com/insure/bean/hbm/PosUserDocUsed.hbm.xml" /> 
+		<mapping resource="com/insure/bean/hbm/Role.hbm.xml" />
+		<mapping resource="com/insure/bean/hbm/RoleMember.hbm.xml" />
+		<mapping resource="com/insure/bean/hbm/.hbm.xml" />
+		 -->
+	</session-factory>
+</hibernate-configuration>

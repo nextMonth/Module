@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+ <hibernate-mapping package="com.insure.bean">
+    <class name="Dept" table="RQ_DEPT">
+	  <!-- 机构编码  -->
+      <id name="deptId" type="java.lang.String">
+         <column name="DEPTID" length="30"></column>
+         <generator class="assigned"></generator>
+      </id>
+	  <!-- 机构名称   -->
+      <property name="deptName" type="java.lang.String">
+        <column name="Name" length="300"/>
+      </property>
+	  <!-- 机构类型   -->
+      <property name="kind" type="java.lang.String">
+        <column name="KIND" length="5"/>
+      </property>
+	  <!-- 分公司   -->
+      <property name="branchId" type="java.lang.String">
+        <column name="BRANCHID" length="20"/>
+      </property>
+	  <!-- 上级机构   -->
+      <property name="abvbranch" type="java.lang.String">
+        <column name="ABVBRANCH" length="20"/>
+      </property>
+	  <!-- 使用状态   -->
+	  <property name="isUsed" type="java.lang.String">
+        <column name="ISUSED" length="2"/>
+      </property>    
+	  <!-- 交易间隔   -->
+	  <property name="transTime" type="java.lang.Integer">
+        <column name="TRANSTIME" length="6"/>
+      </property>    
+	  <!-- 限制笔数   -->
+	  <property name="transDataTimes" type="java.lang.Integer">
+        <column name="TRANSDATATIMES" length="6"/>
+      </property>    
+      
+    </class>
+ 
+ </hibernate-mapping>
