@@ -12,7 +12,7 @@
 	<properties>
 		<springVersion>4.1.1.RELEASE</springVersion>
 		<hibernateVersion>4.3.6.Final</hibernateVersion>
-		<jasksonVersion>2.8.11</jasksonVersion>
+		<jasksonVersion>2.10.3</jasksonVersion>
 	</properties>
 
 	<dependencies>
